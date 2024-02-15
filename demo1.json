@@ -1,17 +1,17 @@
 {
-	"project":{
-		"title": "Discussion  ",
-		"creator": "Jyrki Oraskaril"
-	},
-	"tabs": [
-	    {
-	        "title": "0: Introduction",
-	        "description": [
-	            "This is a simple app to visualize and communicate the content of a knowledge base in the RDF format. The project is open source and we welcome all who is interested to participate. Please find the Github repository [here](https://github.com/MadsHolten/sparql-visualizer).\n",	            
-	            "* ...?"
-	        ],
-	        "triples": "",
-	        "query": ""
-		}
-		]
+    "project": {
+        "title": "Discussion  ",
+        "creator": "Jyrki Oraskari"
+    },
+    "tabs": [
+        {
+            "title": "0: Introduction",
+            "description": [
+                "",
+                "* ...?"
+            ],
+            "triples": "",
+            "query": ""
+        }
+    ]
 }
