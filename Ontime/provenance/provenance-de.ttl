@@ -2,14 +2,15 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<..\index-de.html> a prov:Entity;
+<https://w3id.org/ontime/1.0.1> a prov:Entity;
 	 dc:title "The Ontime Ontology";
+	 prov:wasAttributedTo <https://dc.rwth-aachen.de/en/jyrki-oraskari-2/>;
+	 dc:creator <https://dc.rwth-aachen.de/en/jyrki-oraskari-2/>;
+	 prov:wasAttributedTo <https://dc.rwth-aachen.de/en/jyrki-oraskari-2/>;
+	 dc:contributor <https://dc.rwth-aachen.de/en/jyrki-oraskari-2/>;
 	 prov:wasAttributedTo :agent0;
-	 prov:wasAttributedTo :agent1;
-	 prov:wasAttributedTo :agent2;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasRevisionOf <https://w3id.org/ontime/1.0.0>;
 	 prov:wasGeneratedAt ""15 April, 2026"";
 .
-:agent0 a prov:Agent; foaf:name "Oraskari Jyrki ".
-:agent1 a prov:Agent; foaf:name "Jyrki Oraskari".
-:agent2 a prov:Agent; foaf:name "Jan Luca Fahrendholz-Heiermann".
+:agent0 a prov:Agent; foaf:name "Jan Luca Fahrendholz-Heiermann".
