@@ -1,0 +1,746 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://base.namespace.com", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://www.w3.org/2001/XMLSchema", "http://www.disit.org/km4city/schema" ],
+    "title" : {
+      "undefined" : "The Ontime Ontology"
+    },
+    "iri" : "https://w3id.org/example#",
+    "version" : "0.0.1",
+    "author" : [ "Jyrki Oraskari" ],
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Jyrki Oraskari",
+        "type" : "label"
+      } ],
+      "createdWith" : [ {
+        "identifier" : "createdWith",
+        "language" : "undefined",
+        "value" : "https://chowlk.linkeddata.es/",
+        "type" : "iri"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.0.1",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The Ontime Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://base.namespace.com/WeatherData",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WeatherData",
+      "undefined" : "Weather Data"
+    },
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://base.namespace.com/Location",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Location",
+      "undefined" : "Location"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://base.namespace.com/Delivery",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Delivery",
+      "undefined" : "Delivery"
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://base.namespace.com/TrafficConditionPrediction",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TrafficConditionPrediction",
+      "undefined" : "Traffic Condition Prediction"
+    },
+    "subClasses" : [ "19", "20" ],
+    "attributes" : [ "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://base.namespace.com/MotorWay",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MotorWay",
+      "undefined" : "Motor Way"
+    },
+    "attributes" : [ "external" ],
+    "id" : "25",
+    "superClasses" : [ "12" ]
+  }, {
+    "iri" : "http://base.namespace.com/Lane",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Lane",
+      "undefined" : "Lane"
+    },
+    "subClasses" : [ "11" ],
+    "attributes" : [ "external" ],
+    "id" : "35",
+    "superClasses" : [ "12" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "14", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://base.namespace.com/RoadClosure",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RoadClosure",
+      "undefined" : "Road Closure"
+    },
+    "attributes" : [ "external" ],
+    "id" : "20",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "http://base.namespace.com/TransportRoute",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportRoute",
+      "undefined" : "Transport Route"
+    },
+    "attributes" : [ "external" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://www.disit.org/km4city/schema#Road",
+    "baseIri" : "http://www.disit.org/km4city/schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Road",
+      "undefined" : "Road"
+    },
+    "subClasses" : [ "25", "35" ],
+    "attributes" : [ "external" ],
+    "id" : "12"
+  }, {
+    "instances" : 0,
+    "union" : [ "14", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "45"
+  }, {
+    "iri" : "http://base.namespace.com/RouteSegment",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RouteSegment",
+      "undefined" : "Route Segment"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11",
+    "superClasses" : [ "35" ]
+  }, {
+    "iri" : "http://base.namespace.com/DeliveryPlan",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DeliveryPlan",
+      "undefined" : "Delivery Plan"
+    },
+    "attributes" : [ "external" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://base.namespace.com/TimeWindow",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TimeWindow",
+      "undefined" : "Time Window"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "14", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "9"
+  }, {
+    "instances" : 0,
+    "union" : [ "11", "40" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "8"
+  }, {
+    "instances" : 0,
+    "union" : [ "14", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://schema.org/MoveAction",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MoveAction",
+      "undefined" : "Move Action"
+    },
+    "subClasses" : [ "5" ],
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "instances" : 0,
+    "union" : [ "11", "40" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://base.namespace.com/RoutePoint",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RoutePoint",
+      "undefined" : "Route Point"
+    },
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "16",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://base.namespace.com/Truck",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Truck",
+      "undefined" : "Truck"
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://www.disit.org/km4city/schema#Traffic_flow",
+    "baseIri" : "http://www.disit.org/km4city/schema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Traffic_flow",
+      "undefined" : "Traffic_flow"
+    },
+    "attributes" : [ "external" ],
+    "id" : "31",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "http://base.namespace.com/TrafficDisruption",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TrafficDisruption",
+      "undefined" : "Traffic Disruption"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19",
+    "superClasses" : [ "18" ]
+  }, {
+    "iri" : "http://base.namespace.com/Element",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Element",
+      "undefined" : "Element"
+    },
+    "attributes" : [ "external" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://base.namespace.com/Schedule",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Schedule",
+      "undefined" : "Schedule"
+    },
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://base.namespace.com/TrafficConditionObservation",
+    "baseIri" : "http://base.namespace.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TrafficConditionObservation",
+      "undefined" : "Traffic Condition Observation"
+    },
+    "subClasses" : [ "31" ],
+    "attributes" : [ "external" ],
+    "id" : "32"
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://base.namespace.com/hasDeliveryTimeWindow",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasDeliveryTimeWindow",
+      "undefined" : "has delivery time window"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://base.namespace.com/hasStart",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasStart",
+      "undefined" : "has start"
+    },
+    "domain" : "8",
+    "attributes" : [ "object", "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://base.namespace.com/isPartOf",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "isPartOf",
+      "undefined" : "is part of"
+    },
+    "domain" : "11",
+    "attributes" : [ "object", "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://base.namespace.com/hasLocation",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasLocation",
+      "undefined" : "has location"
+    },
+    "domain" : "14",
+    "attributes" : [ "object", "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://schema.org/price",
+    "baseIri" : "https://schema.org",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "price",
+      "undefined" : "price"
+    },
+    "domain" : "16",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://base.namespace.com/EndTime",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "EndTime",
+      "undefined" : "end time"
+    },
+    "domain" : "16",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://base.namespace.com/Time",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "Time",
+      "undefined" : "time"
+    },
+    "domain" : "16",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://base.namespace.com/hasResource",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasResource",
+      "undefined" : "has resource"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://schema.org/priceCurrency",
+    "baseIri" : "https://schema.org",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "priceCurrency",
+      "undefined" : "price currency"
+    },
+    "domain" : "16",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "28"
+  }, {
+    "range" : "32",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "30"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
+  }, {
+    "range" : "35",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  }, {
+    "range" : "18",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "range" : "12",
+    "domain" : "35",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "range" : "12",
+    "domain" : "25",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://base.namespace.com/StartTime",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "StartTime",
+      "undefined" : "start time"
+    },
+    "domain" : "16",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "41"
+  }, {
+    "range" : "18",
+    "domain" : "19",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://base.namespace.com/hasNext",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "hasNext",
+      "undefined" : "has next"
+    },
+    "domain" : "45",
+    "attributes" : [ "object", "external" ],
+    "id" : "44"
+  }, {
+    "iri" : "http://base.namespace.com/hasElement",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "hasElement",
+      "undefined" : "has element"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://base.namespace.com/hasPrediction",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "hasPrediction",
+      "undefined" : "has prediction"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "external" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://base.namespace.com/predictedBy",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "predictedBy",
+      "undefined" : "predicted by"
+    },
+    "domain" : "19",
+    "attributes" : [ "object", "external" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://base.namespace.com/hasPlannedRoute",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "hasPlannedRoute",
+      "undefined" : "has planned route"
+    },
+    "domain" : "46",
+    "attributes" : [ "object", "external" ],
+    "id" : "53"
+  }, {
+    "iri" : "http://base.namespace.com/hasSchedule",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasSchedule",
+      "undefined" : "has schedule"
+    },
+    "domain" : "46",
+    "attributes" : [ "object", "external" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://base.namespace.com/hasEnd",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "hasEnd",
+      "undefined" : "has end"
+    },
+    "domain" : "50",
+    "attributes" : [ "object", "external" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://base.namespace.com/hasPlannedSchedule",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "hasPlannedSchedule",
+      "undefined" : "has planned schedule"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://base.namespace.com/hasTimeWindow",
+    "baseIri" : "http://base.namespace.com",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasTimeWindow",
+      "undefined" : "has time window"
+    },
+    "domain" : "11",
+    "attributes" : [ "object", "external" ],
+    "id" : "57"
+  } ]
+}
