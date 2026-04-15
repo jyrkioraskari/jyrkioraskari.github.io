@@ -1,0 +1,283 @@
+@prefix : <https://w3id.org/example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/example#> .
+
+<https://w3id.org/example#> rdf:type owl:Ontology ;
+                             <http://purl.org/dc/elements/1.1/creator> "Jyrki Oraskari" ;
+                             <http://purl.org/dc/elements/1.1/title> "The Ontime Ontology" ;
+                             owl:versionInfo "0.0.1" ;
+                             <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://base.namespace.com/hasDeliveryTimeWindow
+<http://base.namespace.com/hasDeliveryTimeWindow> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://base.namespace.com/Schedule> ;
+                                                  rdfs:range <http://base.namespace.com/TimeWindow> ;
+                                                  rdfs:label "has delivery time window" .
+
+
+###  http://base.namespace.com/hasElement
+<http://base.namespace.com/hasElement> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://base.namespace.com/Delivery> ;
+                                       rdfs:range <http://base.namespace.com/Element> ;
+                                       rdfs:label "has element" .
+
+
+###  http://base.namespace.com/hasEnd
+<http://base.namespace.com/hasEnd> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://base.namespace.com/RouteSegment> ,
+                                               <http://base.namespace.com/TransportRoute> ;
+                                   rdfs:range <http://base.namespace.com/RoutePoint> ,
+                                              <http://base.namespace.com/RouteSegment> ;
+                                   rdfs:label "has end" .
+
+
+###  http://base.namespace.com/hasLocation
+<http://base.namespace.com/hasLocation> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://base.namespace.com/RoutePoint> ;
+                                        rdfs:range <http://base.namespace.com/Location> ;
+                                        rdfs:label "has location" .
+
+
+###  http://base.namespace.com/hasNext
+<http://base.namespace.com/hasNext> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://base.namespace.com/RoutePoint> ,
+                                                <http://base.namespace.com/RouteSegment> ;
+                                    rdfs:range <http://base.namespace.com/RoutePoint> ,
+                                               <http://base.namespace.com/RouteSegment> ;
+                                    rdfs:label "has next" .
+
+
+###  http://base.namespace.com/hasPlannedRoute
+<http://base.namespace.com/hasPlannedRoute> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://base.namespace.com/DeliveryPlan> ;
+                                            rdfs:range <http://base.namespace.com/TransportRoute> ;
+                                            rdfs:label "has planned route" .
+
+
+###  http://base.namespace.com/hasPlannedSchedule
+<http://base.namespace.com/hasPlannedSchedule> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <http://base.namespace.com/Delivery> ;
+                                               rdfs:range <http://base.namespace.com/DeliveryPlan> ;
+                                               rdfs:label "has planned schedule" .
+
+
+###  http://base.namespace.com/hasPrediction
+<http://base.namespace.com/hasPrediction> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <http://base.namespace.com/Location> ;
+                                          rdfs:range <http://base.namespace.com/TrafficConditionPrediction> ;
+                                          rdfs:label "has prediction" .
+
+
+###  http://base.namespace.com/hasResource
+<http://base.namespace.com/hasResource> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://base.namespace.com/Delivery> ;
+                                        rdfs:range <http://base.namespace.com/Truck> ;
+                                        rdfs:label "has resource" .
+
+
+###  http://base.namespace.com/hasSchedule
+<http://base.namespace.com/hasSchedule> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://base.namespace.com/DeliveryPlan> ;
+                                        rdfs:range <http://base.namespace.com/Schedule> ;
+                                        rdfs:label "has schedule" .
+
+
+###  http://base.namespace.com/hasStart
+<http://base.namespace.com/hasStart> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://base.namespace.com/RouteSegment> ,
+                                                 <http://base.namespace.com/TransportRoute> ;
+                                     rdfs:range <http://base.namespace.com/RoutePoint> ,
+                                                <http://base.namespace.com/RouteSegment> ;
+                                     rdfs:label "has start" .
+
+
+###  http://base.namespace.com/hasTimeWindow
+<http://base.namespace.com/hasTimeWindow> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <http://base.namespace.com/RouteSegment> ;
+                                          rdfs:range <http://base.namespace.com/TimeWindow> ;
+                                          rdfs:label "has time window" .
+
+
+###  http://base.namespace.com/isPartOf
+<http://base.namespace.com/isPartOf> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://base.namespace.com/RouteSegment> ;
+                                     rdfs:range <http://www.disit.org/km4city/schema#Road> ;
+                                     rdfs:label "is part of" .
+
+
+###  http://base.namespace.com/predictedBy
+<http://base.namespace.com/predictedBy> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://base.namespace.com/TrafficDisruption> ;
+                                        rdfs:range <http://base.namespace.com/WeatherData> ;
+                                        rdfs:label "predicted by" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://base.namespace.com/EndTime
+<http://base.namespace.com/EndTime> rdf:type owl:DatatypeProperty ;
+                                    rdfs:label "end time" .
+
+
+###  http://base.namespace.com/StartTime
+<http://base.namespace.com/StartTime> rdf:type owl:DatatypeProperty ;
+                                      rdfs:label "start time" .
+
+
+###  http://base.namespace.com/Time
+<http://base.namespace.com/Time> rdf:type owl:DatatypeProperty ;
+                                 rdfs:label "time" .
+
+
+###  https://schema.org/price
+<https://schema.org/price> rdf:type owl:DatatypeProperty ;
+                           rdfs:label "price" .
+
+
+###  https://schema.org/priceCurrency
+<https://schema.org/priceCurrency> rdf:type owl:DatatypeProperty ;
+                                   rdfs:label "price currency" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://base.namespace.com/Delivery
+<http://base.namespace.com/Delivery> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://schema.org/MoveAction> ;
+                                     rdfs:label "Delivery" .
+
+
+###  http://base.namespace.com/DeliveryPlan
+<http://base.namespace.com/DeliveryPlan> rdf:type owl:Class ;
+                                         rdfs:label "Delivery Plan" .
+
+
+###  http://base.namespace.com/Element
+<http://base.namespace.com/Element> rdf:type owl:Class ;
+                                    rdfs:label "Element" .
+
+
+###  http://base.namespace.com/Lane
+<http://base.namespace.com/Lane> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://www.disit.org/km4city/schema#Road> ;
+                                 rdfs:label "Lane" .
+
+
+###  http://base.namespace.com/Location
+<http://base.namespace.com/Location> rdf:type owl:Class ;
+                                     rdfs:label "Location" .
+
+
+###  http://base.namespace.com/MotorWay
+<http://base.namespace.com/MotorWay> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.disit.org/km4city/schema#Road> ;
+                                     rdfs:label "Motor Way" .
+
+
+###  http://base.namespace.com/RoadClosure
+<http://base.namespace.com/RoadClosure> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://base.namespace.com/TrafficConditionPrediction> ;
+                                        rdfs:label "Road Closure" .
+
+
+###  http://base.namespace.com/RoutePoint
+<http://base.namespace.com/RoutePoint> rdf:type owl:Class ;
+                                       rdfs:label "Route Point" .
+
+
+###  http://base.namespace.com/RouteSegment
+<http://base.namespace.com/RouteSegment> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://base.namespace.com/Lane> ;
+                                         rdfs:label "Route Segment" .
+
+
+###  http://base.namespace.com/Schedule
+<http://base.namespace.com/Schedule> rdf:type owl:Class ;
+                                     rdfs:label "Schedule" .
+
+
+###  http://base.namespace.com/TimeWindow
+<http://base.namespace.com/TimeWindow> rdf:type owl:Class ;
+                                       rdfs:label "Time Window" .
+
+
+###  http://base.namespace.com/TrafficConditionObservation
+<http://base.namespace.com/TrafficConditionObservation> rdf:type owl:Class ;
+                                                        rdfs:label "Traffic Condition Observation" .
+
+
+###  http://base.namespace.com/TrafficConditionPrediction
+<http://base.namespace.com/TrafficConditionPrediction> rdf:type owl:Class ;
+                                                       rdfs:label "Traffic Condition Prediction" .
+
+
+###  http://base.namespace.com/TrafficDisruption
+<http://base.namespace.com/TrafficDisruption> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://base.namespace.com/TrafficConditionPrediction> ;
+                                              rdfs:label "Traffic Disruption" .
+
+
+###  http://base.namespace.com/TransportRoute
+<http://base.namespace.com/TransportRoute> rdf:type owl:Class ;
+                                           rdfs:label "Transport Route" .
+
+
+###  http://base.namespace.com/Truck
+<http://base.namespace.com/Truck> rdf:type owl:Class ;
+                                  rdfs:label "Truck" .
+
+
+###  http://base.namespace.com/WeatherData
+<http://base.namespace.com/WeatherData> rdf:type owl:Class ;
+                                        rdfs:label "Weather Data" .
+
+
+###  http://www.disit.org/km4city/schema#Road
+<http://www.disit.org/km4city/schema#Road> rdf:type owl:Class ;
+                                           rdfs:label "Road" .
+
+
+###  http://www.disit.org/km4city/schema#Traffic_flow
+<http://www.disit.org/km4city/schema#Traffic_flow> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://base.namespace.com/TrafficConditionObservation> ;
+                                                   rdfs:label "Traffic_flow" .
+
+
+###  https://schema.org/MoveAction
+<https://schema.org/MoveAction> rdf:type owl:Class ;
+                                rdfs:label "Move Action" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

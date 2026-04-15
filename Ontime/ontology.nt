@@ -1,0 +1,251 @@
+<https://w3id.org/example#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/example#> <http://purl.org/dc/elements/1.1/creator> "Jyrki Oraskari" .
+<https://w3id.org/example#> <http://purl.org/dc/elements/1.1/title> "The Ontime Ontology" .
+<https://w3id.org/example#> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1" .
+<https://w3id.org/example#> <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/hasDeliveryTimeWindow
+<http://base.namespace.com/hasDeliveryTimeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasDeliveryTimeWindow> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Schedule> .
+<http://base.namespace.com/hasDeliveryTimeWindow> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/TimeWindow> .
+<http://base.namespace.com/hasDeliveryTimeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "has delivery time window" .
+# 
+# http://base.namespace.com/hasElement
+<http://base.namespace.com/hasElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasElement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Delivery> .
+<http://base.namespace.com/hasElement> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Element> .
+<http://base.namespace.com/hasElement> <http://www.w3.org/2000/01/rdf-schema#label> "has element" .
+# 
+# http://base.namespace.com/hasEnd
+<http://base.namespace.com/hasEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/TransportRoute> .
+<http://base.namespace.com/hasEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/RoutePoint> .
+<http://base.namespace.com/hasEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasEnd> <http://www.w3.org/2000/01/rdf-schema#label> "has end" .
+# 
+# http://base.namespace.com/hasLocation
+<http://base.namespace.com/hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RoutePoint> .
+<http://base.namespace.com/hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Location> .
+<http://base.namespace.com/hasLocation> <http://www.w3.org/2000/01/rdf-schema#label> "has location" .
+# 
+# http://base.namespace.com/hasNext
+<http://base.namespace.com/hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasNext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RoutePoint> .
+<http://base.namespace.com/hasNext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasNext> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/RoutePoint> .
+<http://base.namespace.com/hasNext> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasNext> <http://www.w3.org/2000/01/rdf-schema#label> "has next" .
+# 
+# http://base.namespace.com/hasPlannedRoute
+<http://base.namespace.com/hasPlannedRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasPlannedRoute> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/DeliveryPlan> .
+<http://base.namespace.com/hasPlannedRoute> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/TransportRoute> .
+<http://base.namespace.com/hasPlannedRoute> <http://www.w3.org/2000/01/rdf-schema#label> "has planned route" .
+# 
+# http://base.namespace.com/hasPlannedSchedule
+<http://base.namespace.com/hasPlannedSchedule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasPlannedSchedule> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Delivery> .
+<http://base.namespace.com/hasPlannedSchedule> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/DeliveryPlan> .
+<http://base.namespace.com/hasPlannedSchedule> <http://www.w3.org/2000/01/rdf-schema#label> "has planned schedule" .
+# 
+# http://base.namespace.com/hasPrediction
+<http://base.namespace.com/hasPrediction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasPrediction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Location> .
+<http://base.namespace.com/hasPrediction> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/TrafficConditionPrediction> .
+<http://base.namespace.com/hasPrediction> <http://www.w3.org/2000/01/rdf-schema#label> "has prediction" .
+# 
+# http://base.namespace.com/hasResource
+<http://base.namespace.com/hasResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasResource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Delivery> .
+<http://base.namespace.com/hasResource> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Truck> .
+<http://base.namespace.com/hasResource> <http://www.w3.org/2000/01/rdf-schema#label> "has resource" .
+# 
+# http://base.namespace.com/hasSchedule
+<http://base.namespace.com/hasSchedule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasSchedule> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/DeliveryPlan> .
+<http://base.namespace.com/hasSchedule> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Schedule> .
+<http://base.namespace.com/hasSchedule> <http://www.w3.org/2000/01/rdf-schema#label> "has schedule" .
+# 
+# http://base.namespace.com/hasStart
+<http://base.namespace.com/hasStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/TransportRoute> .
+<http://base.namespace.com/hasStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/RoutePoint> .
+<http://base.namespace.com/hasStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasStart> <http://www.w3.org/2000/01/rdf-schema#label> "has start" .
+# 
+# http://base.namespace.com/hasTimeWindow
+<http://base.namespace.com/hasTimeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/TimeWindow> .
+<http://base.namespace.com/hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "has time window" .
+# 
+# http://base.namespace.com/isPartOf
+<http://base.namespace.com/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/RouteSegment> .
+<http://base.namespace.com/isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.disit.org/km4city/schema#Road> .
+<http://base.namespace.com/isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is part of" .
+# 
+# http://base.namespace.com/predictedBy
+<http://base.namespace.com/predictedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/predictedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/TrafficDisruption> .
+<http://base.namespace.com/predictedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/WeatherData> .
+<http://base.namespace.com/predictedBy> <http://www.w3.org/2000/01/rdf-schema#label> "predicted by" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/EndTime
+<http://base.namespace.com/EndTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/EndTime> <http://www.w3.org/2000/01/rdf-schema#label> "end time" .
+# 
+# http://base.namespace.com/StartTime
+<http://base.namespace.com/StartTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/StartTime> <http://www.w3.org/2000/01/rdf-schema#label> "start time" .
+# 
+# http://base.namespace.com/Time
+<http://base.namespace.com/Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/Time> <http://www.w3.org/2000/01/rdf-schema#label> "time" .
+# 
+# https://schema.org/price
+<https://schema.org/price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/price> <http://www.w3.org/2000/01/rdf-schema#label> "price" .
+# 
+# https://schema.org/priceCurrency
+<https://schema.org/priceCurrency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/priceCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "price currency" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/Delivery
+<http://base.namespace.com/Delivery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Delivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/MoveAction> .
+<http://base.namespace.com/Delivery> <http://www.w3.org/2000/01/rdf-schema#label> "Delivery" .
+# 
+# http://base.namespace.com/DeliveryPlan
+<http://base.namespace.com/DeliveryPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/DeliveryPlan> <http://www.w3.org/2000/01/rdf-schema#label> "Delivery Plan" .
+# 
+# http://base.namespace.com/Element
+<http://base.namespace.com/Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
+# 
+# http://base.namespace.com/Lane
+<http://base.namespace.com/Lane> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Lane> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.disit.org/km4city/schema#Road> .
+<http://base.namespace.com/Lane> <http://www.w3.org/2000/01/rdf-schema#label> "Lane" .
+# 
+# http://base.namespace.com/Location
+<http://base.namespace.com/Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+# 
+# http://base.namespace.com/MotorWay
+<http://base.namespace.com/MotorWay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/MotorWay> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.disit.org/km4city/schema#Road> .
+<http://base.namespace.com/MotorWay> <http://www.w3.org/2000/01/rdf-schema#label> "Motor Way" .
+# 
+# http://base.namespace.com/RoadClosure
+<http://base.namespace.com/RoadClosure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/RoadClosure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/TrafficConditionPrediction> .
+<http://base.namespace.com/RoadClosure> <http://www.w3.org/2000/01/rdf-schema#label> "Road Closure" .
+# 
+# http://base.namespace.com/RoutePoint
+<http://base.namespace.com/RoutePoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/RoutePoint> <http://www.w3.org/2000/01/rdf-schema#label> "Route Point" .
+# 
+# http://base.namespace.com/RouteSegment
+<http://base.namespace.com/RouteSegment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/RouteSegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Lane> .
+<http://base.namespace.com/RouteSegment> <http://www.w3.org/2000/01/rdf-schema#label> "Route Segment" .
+# 
+# http://base.namespace.com/Schedule
+<http://base.namespace.com/Schedule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Schedule> <http://www.w3.org/2000/01/rdf-schema#label> "Schedule" .
+# 
+# http://base.namespace.com/TimeWindow
+<http://base.namespace.com/TimeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/TimeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "Time Window" .
+# 
+# http://base.namespace.com/TrafficConditionObservation
+<http://base.namespace.com/TrafficConditionObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/TrafficConditionObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Traffic Condition Observation" .
+# 
+# http://base.namespace.com/TrafficConditionPrediction
+<http://base.namespace.com/TrafficConditionPrediction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/TrafficConditionPrediction> <http://www.w3.org/2000/01/rdf-schema#label> "Traffic Condition Prediction" .
+# 
+# http://base.namespace.com/TrafficDisruption
+<http://base.namespace.com/TrafficDisruption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/TrafficDisruption> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/TrafficConditionPrediction> .
+<http://base.namespace.com/TrafficDisruption> <http://www.w3.org/2000/01/rdf-schema#label> "Traffic Disruption" .
+# 
+# http://base.namespace.com/TransportRoute
+<http://base.namespace.com/TransportRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/TransportRoute> <http://www.w3.org/2000/01/rdf-schema#label> "Transport Route" .
+# 
+# http://base.namespace.com/Truck
+<http://base.namespace.com/Truck> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Truck> <http://www.w3.org/2000/01/rdf-schema#label> "Truck" .
+# 
+# http://base.namespace.com/WeatherData
+<http://base.namespace.com/WeatherData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/WeatherData> <http://www.w3.org/2000/01/rdf-schema#label> "Weather Data" .
+# 
+# http://www.disit.org/km4city/schema#Road
+<http://www.disit.org/km4city/schema#Road> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.disit.org/km4city/schema#Road> <http://www.w3.org/2000/01/rdf-schema#label> "Road" .
+# 
+# http://www.disit.org/km4city/schema#Traffic_flow
+<http://www.disit.org/km4city/schema#Traffic_flow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.disit.org/km4city/schema#Traffic_flow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/TrafficConditionObservation> .
+<http://www.disit.org/km4city/schema#Traffic_flow> <http://www.w3.org/2000/01/rdf-schema#label> "Traffic_flow" .
+# 
+# https://schema.org/MoveAction
+<https://schema.org/MoveAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/MoveAction> <http://www.w3.org/2000/01/rdf-schema#label> "Move Action" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

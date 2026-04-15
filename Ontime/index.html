@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>The Ontime Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/oomd#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/oomd#","name":"The Ontime Ontology", "headline":"The Ontology for Open Mobility Data provides a structured framework to link external mobility datasets with Just-in-Time (JIT) construction logistics concepts. Its goal is to achieve semantic alignment between diverse open mobility sources and lean construction needs. Rather than modeling internal construction processes, it maps external data—such as traffic, transport, and mobility information—to relevant JIT concepts. By defining shared semantics, the ontology enables interoperability and data reuse. It is built on a manually curated baseline and refined using large language model (LLM) embeddings to cluster domain terms, define scope, identify datasets, and suggest reusable components.", "dateReleased":""15 April, 2026"", "dateModified":""15 April, 2026"", "license":"http://creativecommons.org/licenses/by/2.0/", "author":[{"@type":"Person","name":"Oraskari Jyrki "}], "contributor":[{"@type":"Person","name":"Jyrki Oraskari"},{"@type":"Person","name":"Jan Luca Fahrendholz-Heiermann"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The Ontime Ontology</h1>
+<h2>Release: "15 April, 2026"</h2>
+
+
+<dl>
+<dt>Modified on: "15 April, 2026"</dt>
+<dt>Issued on:</dt>
+<dd>Date issued</dd>
+<dt>Authors:</dt>
+<dd>Oraskari Jyrki </dd>
+
+<dt>Contributors:</dt>
+<dd>Jyrki Oraskari</dd><dd>Jan Luca Fahrendholz-Heiermann</dd>
+
+<dt>Publisher:</dt>
+<dd>RWTH Aachen University, RWTH Aachen University</dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY-blue.svg" alt="http://creativecommons.org/licenses/by/2.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The Ontology for Open Mobility Data provides a structured framework to link external mobility datasets with Just-in-Time (JIT) construction logistics concepts. Its goal is to achieve semantic alignment between diverse open mobility sources and lean construction needs. Rather than modeling internal construction processes, it maps external data—such as traffic, transport, and mobility information—to relevant JIT concepts. By defining shared semantics, the ontology enables interoperability and data reuse. It is built on a manually curated baseline and refined using large language model (LLM) embeddings to cluster domain terms, define scope, identify datasets, and suggest reusable components.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">The Ontology for Open Mobility Data offers a structured semantic framework for representing external mobility datasets and connecting them to Just-in-Time (JIT) construction logistics concepts. Its main goal is to facilitate semantic alignment between diverse open mobility data sources and the internal logistics needs of lean construction workflows. Instead of modeling the internal construction domain itself, the ontology concentrates on mapping external data sources—such as traffic, transport, and mobility information—to relevant JIT logistics concepts. By establishing shared semantics, it promotes data interoperability and reuse, enabling construction stakeholders to incorporate real-time mobility information into operational decision-making. This approach is especially useful in scenarios where route restrictions, traffic conditions, and external events impact construction logistics. The ontology is built from a manually curated baseline and enhanced through large language model (LLM) embeddings. These embeddings help cluster domain terms, analyze scope, identify relevant datasets, and suggest reusable ontology components. This hybrid method combines expert-driven structure with AI-supported scalability.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1/&gt;</td></tr>
+<tr><td><b>km4city</b></td><td>&lt;http://www.disit.org/km4city/schema#&gt;</td></tr>
+<tr><td><b>mod</b></td><td>&lt;https://w3id.org/mod#&gt;</td></tr>
+<tr><td><b>ontime</b></td><td>&lt;http://base.namespace.com/&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>schema</b></td><td>&lt;https://schema.org/&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">null: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://base.namespace.com/Delivery" title="http://base.namespace.com/Delivery">Delivery</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/DeliveryPlan" title="http://base.namespace.com/DeliveryPlan">Delivery Plan</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/Element" title="http://base.namespace.com/Element">Element</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/Lane" title="http://base.namespace.com/Lane">Lane</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/Location" title="http://base.namespace.com/Location">Location</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/MotorWay" title="http://base.namespace.com/MotorWay">Motor Way</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/MoveAction" title="https://schema.org/MoveAction">Move Action</a>
+   </li>
+   <li>
+      <a href="#http://www.disit.org/km4city/schema#Road" title="http://www.disit.org/km4city/schema#Road">Road</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/RoadClosure" title="http://base.namespace.com/RoadClosure">Road Closure</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/Schedule" title="http://base.namespace.com/Schedule">Schedule</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/TimeWindow" title="http://base.namespace.com/TimeWindow">Time Window</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/TrafficConditionObservation"
+         title="http://base.namespace.com/TrafficConditionObservation">Traffic Condition Observation</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/TrafficConditionPrediction"
+         title="http://base.namespace.com/TrafficConditionPrediction">Traffic Condition Prediction</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/TrafficDisruption" title="http://base.namespace.com/TrafficDisruption">Traffic Disruption</a>
+   </li>
+   <li>
+      <a href="#http://www.disit.org/km4city/schema#Traffic_flow" title="http://www.disit.org/km4city/schema#Traffic_flow">Traffic_flow</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/TransportRoute" title="http://base.namespace.com/TransportRoute">Transport Route</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/Truck" title="http://base.namespace.com/Truck">Truck</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/WeatherData" title="http://base.namespace.com/WeatherData">Weather Data</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://base.namespace.com/hasDeliveryTimeWindow" title="http://base.namespace.com/hasDeliveryTimeWindow">has delivery time window</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasElement" title="http://base.namespace.com/hasElement">has element</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasEnd" title="http://base.namespace.com/hasEnd">has end</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasLocation" title="http://base.namespace.com/hasLocation">has location</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasNext" title="http://base.namespace.com/hasNext">has next</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasPlannedRoute" title="http://base.namespace.com/hasPlannedRoute">has planned route</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasPlannedSchedule" title="http://base.namespace.com/hasPlannedSchedule">has planned schedule</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasPrediction" title="http://base.namespace.com/hasPrediction">has prediction</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasResource" title="http://base.namespace.com/hasResource">has resource</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasSchedule" title="http://base.namespace.com/hasSchedule">has schedule</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasStart" title="http://base.namespace.com/hasStart">has start</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/hasTimeWindow" title="http://base.namespace.com/hasTimeWindow">has time window</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/isPartOf" title="http://base.namespace.com/isPartOf">is part of</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/predictedBy" title="http://base.namespace.com/predictedBy">predicted by</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://base.namespace.com/EndTime" title="http://base.namespace.com/EndTime">end time</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/price" title="https://schema.org/price">price</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/priceCurrency" title="https://schema.org/priceCurrency">price currency</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/StartTime" title="http://base.namespace.com/StartTime">start time</a>
+   </li>
+   <li>
+      <a href="#http://base.namespace.com/Time" title="http://base.namespace.com/Time">time</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">null: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.
+
+</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for null classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by null.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://base.namespace.com/Delivery" title="http://base.namespace.com/Delivery">Delivery</a></li>
+  <li><a href="#http://base.namespace.com/DeliveryPlan" title="http://base.namespace.com/DeliveryPlan">Delivery Plan</a></li>
+  <li><a href="#http://base.namespace.com/Element" title="http://base.namespace.com/Element">Element</a></li>
+  <li><a href="#http://base.namespace.com/Lane" title="http://base.namespace.com/Lane">Lane</a></li>
+  <li><a href="#http://base.namespace.com/Location" title="http://base.namespace.com/Location">Location</a></li>
+  <li><a href="#http://base.namespace.com/MotorWay" title="http://base.namespace.com/MotorWay">Motor Way</a></li>
+  <li><a href="#https://schema.org/MoveAction" title="https://schema.org/MoveAction">Move Action</a></li>
+  <li><a href="#http://www.disit.org/km4city/schema#Road" title="http://www.disit.org/km4city/schema#Road">Road</a></li>
+  <li><a href="#http://base.namespace.com/RoadClosure" title="http://base.namespace.com/RoadClosure">Road Closure</a></li>
+  <li><a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a></li>
+  <li><a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a></li>
+  <li><a href="#http://base.namespace.com/Schedule" title="http://base.namespace.com/Schedule">Schedule</a></li>
+  <li><a href="#http://base.namespace.com/TimeWindow" title="http://base.namespace.com/TimeWindow">Time Window</a></li>
+  <li><a href="#http://base.namespace.com/TrafficConditionObservation" title="http://base.namespace.com/TrafficConditionObservation">Traffic Condition Observation</a></li>
+  <li><a href="#http://base.namespace.com/TrafficConditionPrediction" title="http://base.namespace.com/TrafficConditionPrediction">Traffic Condition Prediction</a></li>
+  <li><a href="#http://base.namespace.com/TrafficDisruption" title="http://base.namespace.com/TrafficDisruption">Traffic Disruption</a></li>
+  <li><a href="#http://www.disit.org/km4city/schema#Traffic_flow" title="http://www.disit.org/km4city/schema#Traffic_flow">Traffic_flow</a></li>
+  <li><a href="#http://base.namespace.com/TransportRoute" title="http://base.namespace.com/TransportRoute">Transport Route</a></li>
+  <li><a href="#http://base.namespace.com/Truck" title="http://base.namespace.com/Truck">Truck</a></li>
+  <li><a href="#http://base.namespace.com/WeatherData" title="http://base.namespace.com/WeatherData">Weather Data</a></li>
+ </ul>
+ <div class="entity" id="http://base.namespace.com/Delivery">
+  <h3>Delivery<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Delivery</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#https://schema.org/MoveAction" title="https://schema.org/MoveAction">Move Action</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasElement" title="http://base.namespace.com/hasElement">has element</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasPlannedSchedule" title="http://base.namespace.com/hasPlannedSchedule">has planned schedule</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasResource" title="http://base.namespace.com/hasResource">has resource</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/DeliveryPlan">
+  <h3>Delivery Plan<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/DeliveryPlan</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasPlannedRoute" title="http://base.namespace.com/hasPlannedRoute">has planned route</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasSchedule" title="http://base.namespace.com/hasSchedule">has schedule</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasPlannedSchedule" title="http://base.namespace.com/hasPlannedSchedule">has planned schedule</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/Element">
+  <h3>Element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Element</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasElement" title="http://base.namespace.com/hasElement">has element</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/Lane">
+  <h3>Lane<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Lane</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.disit.org/km4city/schema#Road" title="http://www.disit.org/km4city/schema#Road">Road</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/Location">
+  <h3>Location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Location</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasPrediction" title="http://base.namespace.com/hasPrediction">has prediction</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasLocation" title="http://base.namespace.com/hasLocation">has location</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/MotorWay">
+  <h3>Motor Way<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/MotorWay</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.disit.org/km4city/schema#Road" title="http://www.disit.org/km4city/schema#Road">Road</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="https://schema.org/MoveAction">
+  <h3>Move Action<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.org/MoveAction</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/Delivery" title="http://base.namespace.com/Delivery">Delivery</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.disit.org/km4city/schema#Road">
+  <h3>Road<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.disit.org/km4city/schema#Road</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/Lane" title="http://base.namespace.com/Lane">Lane</a> <sup class="type-c" title="class">c</sup>, <a href="#http://base.namespace.com/MotorWay" title="http://base.namespace.com/MotorWay">Motor Way</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/isPartOf" title="http://base.namespace.com/isPartOf">is part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/RoadClosure">
+  <h3>Road Closure<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/RoadClosure</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/TrafficConditionPrediction" title="http://base.namespace.com/TrafficConditionPrediction">Traffic Condition Prediction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/RoutePoint">
+  <h3>Route Point<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/RoutePoint</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasLocation" title="http://base.namespace.com/hasLocation">has location</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasNext" title="http://base.namespace.com/hasNext">has next</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasEnd" title="http://base.namespace.com/hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasNext" title="http://base.namespace.com/hasNext">has next</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasStart" title="http://base.namespace.com/hasStart">has start</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/RouteSegment">
+  <h3>Route Segment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/RouteSegment</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/Lane" title="http://base.namespace.com/Lane">Lane</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasEnd" title="http://base.namespace.com/hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasNext" title="http://base.namespace.com/hasNext">has next</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasStart" title="http://base.namespace.com/hasStart">has start</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasTimeWindow" title="http://base.namespace.com/hasTimeWindow">has time window</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/isPartOf" title="http://base.namespace.com/isPartOf">is part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasEnd" title="http://base.namespace.com/hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasNext" title="http://base.namespace.com/hasNext">has next</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasStart" title="http://base.namespace.com/hasStart">has start</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/Schedule">
+  <h3>Schedule<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Schedule</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasDeliveryTimeWindow" title="http://base.namespace.com/hasDeliveryTimeWindow">has delivery time window</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasSchedule" title="http://base.namespace.com/hasSchedule">has schedule</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/TimeWindow">
+  <h3>Time Window<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/TimeWindow</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasDeliveryTimeWindow" title="http://base.namespace.com/hasDeliveryTimeWindow">has delivery time window</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasTimeWindow" title="http://base.namespace.com/hasTimeWindow">has time window</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/TrafficConditionObservation">
+  <h3>Traffic Condition Observation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/TrafficConditionObservation</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.disit.org/km4city/schema#Traffic_flow" title="http://www.disit.org/km4city/schema#Traffic_flow">Traffic_flow</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/TrafficConditionPrediction">
+  <h3>Traffic Condition Prediction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/TrafficConditionPrediction</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/RoadClosure" title="http://base.namespace.com/RoadClosure">Road Closure</a> <sup class="type-c" title="class">c</sup>, <a href="#http://base.namespace.com/TrafficDisruption" title="http://base.namespace.com/TrafficDisruption">Traffic Disruption</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasPrediction" title="http://base.namespace.com/hasPrediction">has prediction</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/TrafficDisruption">
+  <h3>Traffic Disruption<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/TrafficDisruption</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/TrafficConditionPrediction" title="http://base.namespace.com/TrafficConditionPrediction">Traffic Condition Prediction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/predictedBy" title="http://base.namespace.com/predictedBy">predicted by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.disit.org/km4city/schema#Traffic_flow">
+  <h3>Traffic_flow<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.disit.org/km4city/schema#Traffic_flow</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/TrafficConditionObservation" title="http://base.namespace.com/TrafficConditionObservation">Traffic Condition Observation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/TransportRoute">
+  <h3>Transport Route<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/TransportRoute</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasEnd" title="http://base.namespace.com/hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://base.namespace.com/hasStart" title="http://base.namespace.com/hasStart">has start</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasPlannedRoute" title="http://base.namespace.com/hasPlannedRoute">has planned route</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/Truck">
+  <h3>Truck<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Truck</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/hasResource" title="http://base.namespace.com/hasResource">has resource</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://base.namespace.com/WeatherData">
+  <h3>Weather Data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/WeatherData</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://base.namespace.com/predictedBy" title="http://base.namespace.com/predictedBy">predicted by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://base.namespace.com/hasDeliveryTimeWindow" title="http://base.namespace.com/hasDeliveryTimeWindow">has delivery time window</a></li>
+  <li><a href="#http://base.namespace.com/hasElement" title="http://base.namespace.com/hasElement">has element</a></li>
+  <li><a href="#http://base.namespace.com/hasEnd" title="http://base.namespace.com/hasEnd">has end</a></li>
+  <li><a href="#http://base.namespace.com/hasLocation" title="http://base.namespace.com/hasLocation">has location</a></li>
+  <li><a href="#http://base.namespace.com/hasNext" title="http://base.namespace.com/hasNext">has next</a></li>
+  <li><a href="#http://base.namespace.com/hasPlannedRoute" title="http://base.namespace.com/hasPlannedRoute">has planned route</a></li>
+  <li><a href="#http://base.namespace.com/hasPlannedSchedule" title="http://base.namespace.com/hasPlannedSchedule">has planned schedule</a></li>
+  <li><a href="#http://base.namespace.com/hasPrediction" title="http://base.namespace.com/hasPrediction">has prediction</a></li>
+  <li><a href="#http://base.namespace.com/hasResource" title="http://base.namespace.com/hasResource">has resource</a></li>
+  <li><a href="#http://base.namespace.com/hasSchedule" title="http://base.namespace.com/hasSchedule">has schedule</a></li>
+  <li><a href="#http://base.namespace.com/hasStart" title="http://base.namespace.com/hasStart">has start</a></li>
+  <li><a href="#http://base.namespace.com/hasTimeWindow" title="http://base.namespace.com/hasTimeWindow">has time window</a></li>
+  <li><a href="#http://base.namespace.com/isPartOf" title="http://base.namespace.com/isPartOf">is part of</a></li>
+  <li><a href="#http://base.namespace.com/predictedBy" title="http://base.namespace.com/predictedBy">predicted by</a></li>
+ </ul>
+ <div class="entity" id="http://base.namespace.com/hasDeliveryTimeWindow">
+  <h3>has delivery time window<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasDeliveryTimeWindow</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Schedule" title="http://base.namespace.com/Schedule">Schedule</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/TimeWindow" title="http://base.namespace.com/TimeWindow">Time Window</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasElement">
+  <h3>has element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasElement</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Delivery" title="http://base.namespace.com/Delivery">Delivery</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Element" title="http://base.namespace.com/Element">Element</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasEnd">
+  <h3>has end<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasEnd</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://base.namespace.com/TransportRoute" title="http://base.namespace.com/TransportRoute">Transport Route</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasLocation">
+  <h3>has location<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasLocation</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Location" title="http://base.namespace.com/Location">Location</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasNext">
+  <h3>has next<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasNext</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasPlannedRoute">
+  <h3>has planned route<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasPlannedRoute</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/DeliveryPlan" title="http://base.namespace.com/DeliveryPlan">Delivery Plan</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/TransportRoute" title="http://base.namespace.com/TransportRoute">Transport Route</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasPlannedSchedule">
+  <h3>has planned schedule<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasPlannedSchedule</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Delivery" title="http://base.namespace.com/Delivery">Delivery</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/DeliveryPlan" title="http://base.namespace.com/DeliveryPlan">Delivery Plan</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasPrediction">
+  <h3>has prediction<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasPrediction</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Location" title="http://base.namespace.com/Location">Location</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/TrafficConditionPrediction" title="http://base.namespace.com/TrafficConditionPrediction">Traffic Condition Prediction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasResource">
+  <h3>has resource<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasResource</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Delivery" title="http://base.namespace.com/Delivery">Delivery</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Truck" title="http://base.namespace.com/Truck">Truck</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasSchedule">
+  <h3>has schedule<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasSchedule</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/DeliveryPlan" title="http://base.namespace.com/DeliveryPlan">Delivery Plan</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/Schedule" title="http://base.namespace.com/Schedule">Schedule</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasStart">
+  <h3>has start<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasStart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://base.namespace.com/TransportRoute" title="http://base.namespace.com/TransportRoute">Transport Route</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RoutePoint" title="http://base.namespace.com/RoutePoint">Route Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/hasTimeWindow">
+  <h3>has time window<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/hasTimeWindow</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/TimeWindow" title="http://base.namespace.com/TimeWindow">Time Window</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/isPartOf">
+  <h3>is part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/isPartOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/RouteSegment" title="http://base.namespace.com/RouteSegment">Route Segment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.disit.org/km4city/schema#Road" title="http://www.disit.org/km4city/schema#Road">Road</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://base.namespace.com/predictedBy">
+  <h3>predicted by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/predictedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/TrafficDisruption" title="http://base.namespace.com/TrafficDisruption">Traffic Disruption</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://base.namespace.com/WeatherData" title="http://base.namespace.com/WeatherData">Weather Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://base.namespace.com/EndTime" title="http://base.namespace.com/EndTime">end time</a></li>
+  <li><a href="#https://schema.org/price" title="https://schema.org/price">price</a></li>
+  <li><a href="#https://schema.org/priceCurrency" title="https://schema.org/priceCurrency">price currency</a></li>
+  <li><a href="#http://base.namespace.com/StartTime" title="http://base.namespace.com/StartTime">start time</a></li>
+  <li><a href="#http://base.namespace.com/Time" title="http://base.namespace.com/Time">time</a></li>
+ </ul>
+ <div class="entity" id="http://base.namespace.com/EndTime">
+  <h3>end time<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/EndTime</p>
+ </div>
+ <div class="entity" id="https://schema.org/price">
+  <h3>price<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.org/price</p>
+ </div>
+ <div class="entity" id="https://schema.org/priceCurrency">
+  <h3>price currency<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://schema.org/priceCurrency</p>
+ </div>
+ <div class="entity" id="http://base.namespace.com/StartTime">
+  <h3>start time<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/StartTime</p>
+ </div>
+ <div class="entity" id="http://base.namespace.com/Time">
+  <h3>time<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://base.namespace.com/Time</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
